@@ -1,6 +1,9 @@
 const chessapi = require("chess-analysis-api");
 const express = require("express");
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
 
 // get the best move and the evaluation based on the fen notation
 app.get("/:fen(*)", async (req, res) => {
