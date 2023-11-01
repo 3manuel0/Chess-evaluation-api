@@ -5,7 +5,6 @@ const app = express();
 // get the best move and the evaluation based on the fen notation
 app.get("/:fen(*)", async (req, res) => {
   fen = decodeURI(req.url).replace("/", "");
-  console.log(fen);
   let data = {};
   chessapi.chessAnalysisApi
     .getAnalysis({
@@ -31,6 +30,6 @@ app.get("/:fen(*)", async (req, res) => {
       res.send({ error: "fen tring error" });
     });
 });
-app.listen(4000, () => {
-  console.log("listening to port 4000");
+app.listen(5501, () => {
+  console.log("listening to port 5501");
 });
